@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="row m-4 justify-content-center">
+
+    <div class="col col-md-9">
+      <div class="row p-2" style="background-color: rgb(231, 238, 236);">
+        <div class="col col-md-9">
+          <label style="font-size: xx-large; font-weight: bold;">Lista de Clientes</label>
+        </div>
+        <div class="col col-md-3 justify-content-end">
+          <button type="button " class="form-control btn-primary text-white" style="font-size: 22px;" (click)="registrarActualizarCliente()">
+          Agregar Cliente
+         </button>
+        </div>
+      </div>
+
+      <div class="row p-2 pb-4" style="background-color: rgb(231, 238, 236);">
+        <p-table [paginator]="true" [rows]="10"  [scrollable]="true"
+        [value]="listaClientes">
+        <ng-template pTemplate="header">
+          <tr class="spacer">
+            <th class="colum" style="max-width: 80px;">Nro.</th>
+            <th class="colum">Nombres</th>
+            <th class="colum">Apellidos</th>
+            <th class="colum">NroDocmuento</th>
+            <th class="colum">Correo</th>
+            <th class="colum">Fecha</th>
+            <th class="colum">Actualizar</th>
+            <th class="colum">Borrar</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-cliente let-i="rowIndex">
+          <tr>
+            <td style="max-width: 80px;">{{i+1}}</td>
+            <td style="font-size: 22px; ">{{cliente.nombres}}</td>
+            <td style="font-size: 22px; ">{{cliente.apellidos }}</td>
+            <td style="font-size: 22px; ">{{cliente.nroDocumento}}</td>
+            <td style="font-size: 22px; min-width: 150px; ">{{cliente.email}}</td>
+            <td style="font-size: 22px; min-width: 150px; ">{{cliente.createAt}}</td>
+            <td style="min-width: 50px; ">
+              <button class="form-control" class="btn btn-success" (click)="registrarActualizarCliente(cliente)">EDITAR</button>
+            </td>
+            <td style="min-width: 50px; ">
+              <button class="form-control" class="btn btn-danger" (click)="eliminarCliente(cliente.idCliente)">BORRAR</button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+      </div>
+
+    </div>
+
+  </div>
+</div>

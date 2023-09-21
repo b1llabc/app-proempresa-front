@@ -1,0 +1,4 @@
+.requerido:before {
+  content: '*';
+  color:red;
+}

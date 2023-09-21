@@ -1,0 +1,19 @@
+
+<div class="modal-header" style="background-color: rgb(152, 163, 160);">
+  <h3 >Mensaje</h3>
+  <div class="justify-content-end">
+    <button type="button" class="form-control" style="background-color: rgb(152, 163, 160);" (click)="onClose()">
+       <i class="pi pi-times" style="font-size: 2rem; "></i>
+    </button>
+  </div>
+</div>
+<div class="modal-body mx-2">
+  <div class="row my-4 text-center">
+    <h4 style="font-size: 25px;">{{mensaje}}</h4>
+  </div>
+  <div class="row mt-3 mb-3">
+    <div class="text-center">
+      <button type="button" class="btn btn-lg text-white"  style="background-color:  rgba(82, 109, 152, 0.992);" (click)="aceptar()">ACEPTAR</button>
+    </div>
+  </div>
+</div>

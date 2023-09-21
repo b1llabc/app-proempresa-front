@@ -1,0 +1,55 @@
+<form [formGroup]="formCliente">
+  <div class="modal-header " style="background-color: rgb(152, 163, 160);">
+    <h3 class="col-11 fw-bold ">{{title}}</h3>
+    <div class="justify-content-end">
+      <button type="button" class="form-control" style="background-color: rgb(152, 163, 160);" (click)="onClose()">
+         <i class="pi pi-times" style="font-size: 2rem;"></i>
+      </button>
+    </div>
+  </div>
+  <div class="row m-0 p-2" style="background-color: rgba(239, 236, 236, 0.553);">
+
+    <div class="row mx-3 mb-3 mt-3 ">
+      <div class="col col-md-6 ">
+        <label class="form-label fw-bold requerido"> Nombres</label>
+        <input type="text" class="form-control fw-bold" formControlName="nombres" >
+        <div  style="font-size: 15px; color: red;">
+          {{validarFormControl(formCliente, "nombres", "Debe ingresar el nombre")}}
+        </div>
+      </div>
+      <div class="col col-md-6">
+        <label class="form-label fw-bold requerido"> Apellidos</label>
+        <input type="text" class="form-control fw-bold" formControlName="apellidos" >
+        <div  style="font-size: 15px; color: red;">
+          {{validarFormControl(formCliente, "apellidos", "Debe ingresar los apellidos")}}
+        </div>
+      </div>
+    </div>
+
+    <div class="row mx-3 mb-3">
+      <div class="col col-md-6">
+        <label class="form-label fw-bold requerido"> Nro. Documento</label>
+        <input type="text" class="form-control fw-bold" formControlName="nroDocumento" >
+        <div  style="font-size: 15px; color: red;">
+          {{validarFormControl(formCliente, "nroDocumento", "Debe ingresar el Nro. de Documneto")}}
+        </div>
+      </div>
+
+      <div class="col col-md-6">
+        <label class="form-label fw-bold requerido"> Correo</label>
+        <input type="text" class="form-control fw-bold" formControlName="email" >
+        <div  style="font-size: 15px; color: red;">
+          {{validarFormControl(formCliente, "email", "Debe ingresar el correo")}}
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row mt-5 mx-3 mb-4">
+      <div class="text-center">
+        <button class=" btn btn-success" style="width: 150px;" (click)="registrtarActualizarCliente()" >{{accion}}</button>
+      </div>
+    </div>
+
+  </div>
+</form>
